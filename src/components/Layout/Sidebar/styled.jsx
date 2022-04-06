@@ -19,7 +19,7 @@ export const Nav = styled.div`
     width: ${({ width }) => console.log('width')};
   }
 `;
-const mediaPint = css`
+export const mediaPint = css`
       @media (max-width: ${MEDIA_MOBILE}) {
       && > span {
         display: none;
@@ -30,7 +30,7 @@ export const LinkOption = styled(Link)`
   /* ${mediaPint} */
 
   display: block;
-  @media (max-width: ${MEDIA_MOBILE}) {
+  @media (max-width: ${MEDIA_TABLET}) {
       && > span {
         display: none;
       }

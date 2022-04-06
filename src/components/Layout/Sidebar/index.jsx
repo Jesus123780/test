@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Options from "../../Acordion/Options";
-import { LinkOption, Nav, Divli } from "./styled";
+import { LinkOption, Nav, Divli, mediaPint } from "./styled";
 import img1 from "../../../assets/img/logo-ct.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,6 +13,7 @@ import {
 export const Sidebar = ({ open, setOpen }) => {
   const [active, setActive] = useState(false);
   const handleClick = (index) => setActive(index === active ? false : index);
+  console.log(mediaPint)
   return (
     <Nav open={open}>
       <img src={img1} style={{ width: "100px", margin: "15px 0" }} alt='' />
