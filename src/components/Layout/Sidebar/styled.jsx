@@ -1,27 +1,48 @@
 import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Nav = styled.div`
-    /* display: flex; */
-    height: auto;
-    grid-area: aside;
-    transition: 300ms ease;
-    background-color: red;
-    z-index: 999;
-        height: 100%;
-        position: absolute;
-  
-`
+  /* display: flex; */
+  height: auto;
+  grid-area: aside;
+  transition: 300ms ease;
+  background-color: #212529;
+  z-index: 999;
+  height: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  width: 150px;
+`;
 export const LinkOption = styled(Link)`
-    display: block;
-    text-decoration: none;
-    font-size: calc(14px + (4 - 4) * ((100px - 320px) / (2000 - 5)));
-    padding: 5px 10px;
-    padding-left: 10px;
-    text-align: left;
-    white-space: nowrap;
-    margin: 0 30px;
-    & > span a {
-        user-select: none;
-    }
-`
+  display: block;
+  border-bottom: 2px solid #707070;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 0px;
+  padding-left: 5px;
+  text-align: left;
+  white-space: nowrap;
+  justify-content: center;
+  
+  width: auto;
+  & > span a {
+    user-select: none;
+  }
+  & :hover {
+    color: #000;
+  }
+`;
+export const Divli = styled.li`
+  width: auto;
+  text-decoration: none;
+  margin 10px 0px;
+  {list-style:none;
+
+  & :hover {
+
+    background-color: #000;
+    color: #fff;
+    border-radius: 12%;
+  }
+`;

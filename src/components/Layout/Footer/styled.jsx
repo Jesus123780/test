@@ -4,6 +4,6 @@ export const ContainerFooter = styled.div`
     display: flex;
     height: auto;
     grid-area: footer;
-    background-color: blue;
+    background-color: #212529;
 
 `

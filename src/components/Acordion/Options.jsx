@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { MenuLeft, OptionMenu, Span, Row } from './Styled'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons'
 
-const Options = ({ index, active, children, label, path, handleClick, icon, iconTwo }) => {
+const Options = ({ index, active, children, label, path, handleClick }) => {
 
     const [height, setHeight] = useState(0)
     const [heightMenu, setHeightMenu] = useState(0)
@@ -24,11 +26,9 @@ const Options = ({ index, active, children, label, path, handleClick, icon, icon
     return (
         <MenuLeft type='button' onClick={e => handleClick(e)} active={active} ref={refButton} height={height}>
             <Row active={active}>
-                {iconTwo}
+                
                 <Span active={active}>{label}</Span>
-                <i>
-                    {icon}
-                </i>
+                <FontAwesomeIcon icon={faAngleDown} style={{width: '18px', height: '18px', margin:'0 0 0 5px'}}></FontAwesomeIcon>
             </Row>
             <OptionMenu active={active} ref={refMenu}>
                 {children}

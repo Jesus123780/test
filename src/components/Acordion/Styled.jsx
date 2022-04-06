@@ -1,26 +1,20 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
-import { SEGColor, BGColor, PColor } from '../../assets/colors'
+import { SEGColor, PColor } from '../../assets/colors'
 export const Span = styled.span`
-    color: ${ props => props.active ? '#131313' : `${ SEGColor }` };
-    font-weight: 500;
+    color: ${ props => props.active ? '#fff' : `${ SEGColor }` };
     display: block;
-    margin-right: 1em;
-    font-size: calc(14px + (10 - 4) * ((100px - 320px) / (20px - 5)));
-    font-family: Poppins;
+    font-size: 16px;
     user-select: none;
 `
 export const LinkOption = styled(Link)`
     display: block;
     text-decoration: none;
-    font-size: calc(14px + (4 - 4) * ((100px - 320px) / (2000 - 5)));
-    padding: 5px 10px;
-    padding-left: 10px;
-    text-align: left;
+    font-size: 16px;
     white-space: nowrap;
-    margin: 0 30px;
     & > span a {
         user-select: none;
+        color: #fff;
     }
 `
 export const ContainerBurger = styled.div`
@@ -31,7 +25,6 @@ export const ContainerBurger = styled.div`
       background-color: ${ PColor };
       width: 30px;
       height: 2px;
-      margin: 4px;
       border-radius: 1px;
       transition: all .3s ease-out;
     }
@@ -97,21 +90,21 @@ export const BoxSideBar = styled.aside`
 `
 export const MenuLeft = styled.button`
     width: 100%;
+    background-color: #212529;
     height: ${ ({ height }) => height ? height : 'auto' }px;
     display: flex;
+    color: #fff;
     flex-direction: column;
     cursor: pointer;
     border: none;
     outline: 0;
     position: relative;
-    font-family: Poppins;
-    background-color: ${ ({ theme })=> theme.InvColor };
     transition: .3s ease-out;
     align-self: ${ ({ alignSelf }) => alignSelf || 'auto' };
     & > div:first-child { pointer-events: none; }
     overflow: hidden;
     & a {
-        color: ${ props => props.active ? '#a6b0cf' : '#a6b0cf' };
+        color: ${ props => props.active ? '#FFF' : '#000' };
     }
      
 `
@@ -122,12 +115,10 @@ export const Row = styled.div`
     width: 10%;
     position: relative;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
+    width: 100%;
     align-items: center;
     margin: auto;
-    padding: 15px 0px;
+    padding: 30px 0px;
     transition: 1s ease-out;
     
     & > i {
@@ -142,8 +133,7 @@ export const OptionMenu = styled.div`
     position: relative;
     transform: translateY(${ ({ height }) => height }px);
     overflow: hidden;
-    background-color: ${ ({ active })=> active ? '#f3f6fd' : `${ BGColor }` };
-
+    background-color: #212529;
     padding: 8px 0;
 `
 export const Box = styled.div`

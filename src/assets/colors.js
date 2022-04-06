@@ -1,13 +1,13 @@
 /** Colores de interfaz */
-export const PColor = '#ea1d2c'
+export const PColor = '#212529'
 export const PSColor = '#243e87'
 export const PVColor = '#4b80ea'
-export const SEGColor = '#1f1c2f'
+export const SEGColor = '#fff'
 export const SVColor = '#edf2f9'
 /** Colores de fuente */
 export const SFColor = '#272323'
 export const SFVColor = '#CCC'
-export const SFAColor = '#364a63'
+export const SFAColor = '#212529'
 /** Colores de placeholder */
 export const PLColor = '#4c4c4c'
 export const PLVColor = '#e1e1e1'

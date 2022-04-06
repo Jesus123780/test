@@ -8,8 +8,7 @@ import {
 import { ToastContainer } from 'react-toastify';
 import LayoutComponent from './components/Layout';
 import { Home } from './pages/home';
-import { Dashboard } from './pages/dashboard';
-import Context from '../src/context';
+import { Dashboard } from './pages/dashboard/index';
 import { decodeToken, getToken, removeToken } from './utils';
 import AutoContext from './AutoContext';
 // import '../styles/theme.scss';
@@ -20,16 +19,6 @@ import AutoContext from './AutoContext';
 // 
 function App() {
   const CloseButton = ({ closeToast }) => <i onClick={closeToast} className="la la-close notifications-close" />
-  const PrivateRoute = ({ dispatch, component, ...rest }) => {
-    // if (!Login.isAuthenticated(localStorage.getItem('authenticated'))) {
-    //   dispatch(logoutUser());
-    //   return (<Redirect to="/login" />)
-    // } else {
-    //   return ( // eslint-disable-line
-    //     <Route {...rest} render={props => (React.createElement(component, props))} />
-    //   );
-    // }
-  };
   const [auth, setAuth] = useState(undefined)
   useEffect(() => {
     const token = getToken()
@@ -67,12 +56,12 @@ function App() {
       <BrowserRouter value={authData}>
         <AutoContext.Provider value={authData}>
 
-          {!auth ?
+          
             <>
               <Routes>
-                <Route exact path="/login" element={<Home />} />
+                <Route exact path="/login" element={<Home/>} />
               </Routes>
-            </> :
+            </> 
             <>
               <LayoutComponent>
                 <Routes>
@@ -81,8 +70,10 @@ function App() {
                   {/* <PrivateRoute path="/app" dispatch={() => { }} component={LayoutComponent} /> */}
                 </Routes>
               </LayoutComponent>
+              
             </>
-          }
+          
+
         </AutoContext.Provider>
 
       </BrowserRouter>

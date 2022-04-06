@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import styled from 'styled-components'
 
 const LayoutComponent = ({ children }) => {
+    const [open, setOpen] = useState(false)
     return (
         <Container>
             <Sidebar />
-            <Header />
+            <Header
+                open={open}
+                setOpen={setOpen}
+            />
             <div style={{ gridArea: 'main', overflowY: 'auto' }}>
                 {children}
             </div>
@@ -22,7 +26,7 @@ const Container = styled.div`
     width: 100%;
     overflow: hidden;
     height: 100vh;
-    grid-template-rows: 75px 2fr;
+    grid-template-rows: 55px 2fr;
     grid-template-columns: 148px 1fr;
     grid-template-areas:
     'aside head head head'
