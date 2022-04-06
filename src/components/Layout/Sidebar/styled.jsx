@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { MEDIA_MOBILE, MEDIA_TABLET } from "../../../assets/constants";
 
 export const Nav = styled.div`
   /* display: flex; */
-  height: auto;
+  /* height: auto;
   grid-area: aside;
   transition: 300ms ease;
   background-color: #212529;
@@ -11,10 +12,29 @@ export const Nav = styled.div`
   height: 100%;
   position: absolute;
   overflow-x: hidden;
-  width: 150px;
+  width: 150px; */
+
+
+  @media (max-width: ${MEDIA_MOBILE})  {
+    width: ${({ width }) => console.log('width')};
+  }
 `;
+const mediaPint = css`
+      @media (max-width: ${MEDIA_MOBILE}) {
+      && > span {
+        display: none;
+      }
+  }
+`
 export const LinkOption = styled(Link)`
+  /* ${mediaPint} */
+
   display: block;
+  @media (max-width: ${MEDIA_MOBILE}) {
+      && > span {
+        display: none;
+      }
+  }
   border-bottom: 2px solid #707070;
   color: #fff;
   text-decoration: none;
@@ -32,12 +52,13 @@ export const LinkOption = styled(Link)`
   & :hover {
     color: #000;
   }
+
 `;
 export const Divli = styled.li`
   width: auto;
   text-decoration: none;
-  margin 10px 0px;
-  {list-style:none;
+  margin: 10px 0px;
+  list-style:none;
 
   & :hover {
 

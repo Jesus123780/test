@@ -11,6 +11,7 @@ import { Home } from './pages/home';
 import { Dashboard } from './pages/dashboard/index';
 import { decodeToken, getToken, removeToken } from './utils';
 import AutoContext from './AutoContext';
+import { QR } from './components/Qr';
 // import '../styles/theme.scss';
 // import LayoutComponent from '../components/Layout';
 // import Login from '../pages/login';
@@ -55,8 +56,6 @@ function App() {
       />
       <BrowserRouter value={authData}>
         <AutoContext.Provider value={authData}>
-
-          
             <>
               <Routes>
                 <Route exact path="/login" element={<Home/>} />
@@ -66,7 +65,7 @@ function App() {
               <LayoutComponent>
                 <Routes>
                   <Route exact path="/dashboard" element={<Dashboard />} />
-                  <Route exact path="/invoices" element={<About />} />
+                  <Route exact path="/qr" element={<QR />} />
                   {/* <PrivateRoute path="/app" dispatch={() => { }} component={LayoutComponent} /> */}
                 </Routes>
               </LayoutComponent>
